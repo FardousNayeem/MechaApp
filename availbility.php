@@ -1,6 +1,6 @@
 <?php
 // db/availibility.php - AJAX: checks mechanic slots and returns JSON
-require __DIR__ . '/db.php';
+require __DIR__ . '/db/mechadb.php';
 header('Content-Type: application/json');
 
 $mechanic_id = $_POST['mechanic_id'] ?? null;

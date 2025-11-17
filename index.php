@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . '/db/db.php';
+require __DIR__ . '/db/mechadb.php';
 ?>
 <!doctype html>
 <html>
