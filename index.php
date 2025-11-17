@@ -17,23 +17,23 @@
       <form id="bookingForm" method="post" action="submit.php" novalidate>
         <div class="grid">
           <label>Name
-            <input type="text" name="client_name" required>
+            <input type="text" name="client_name" required placeholder="Enter your name">
           </label>
 
           <label>Phone
-            <input type="text" name="phone" required placeholder="digits only">
+            <input type="text" name="phone" required placeholder="01969420420">
           </label>
 
           <label class="full">Address
-            <textarea name="address"></textarea>
+            <textarea name="address" placeholder="Enter your address"></textarea>
           </label>
 
-          <label>Car Registration No
-            <input type="text" name="car_license" required>
+          <label>Car Registration Number
+            <input type="text" name="car_license" required placeholder="Enter your registration number">
           </label>
 
-          <label>Car Engine No
-            <input type="text" name="car_engine" required placeholder="unique engine number">
+          <label>Car Engine Number
+            <input type="text" name="car_engine" required placeholder="Enter your engine number">
           </label>
 
           <label>Appointment Date
@@ -42,7 +42,7 @@
 
           <label>Preferred Mechanic
             <select name="mechanic_id" id="mechanic_id" required>
-              <option value="">-- Select mechanic --</option>
+              <option value="">   Select Mechanic   </option>
               <?php
                 $stmt = $pdo->query("SELECT id, name FROM mechanics ORDER BY name");
                 while ($m = $stmt->fetch()) {
@@ -61,13 +61,14 @@
 
     <aside class="card small">
         <h3>Quick Info</h3>
-        <p>Each mechanic can work on <strong>4 cars per day</strong>.</p>
+        <p>Each mechanic takes <strong>4 appointments per day</strong>.</p>
         <p>If a mechanic is fully booked, try another mechanic or a different date.</p>
+        <p>You can check the availability of a mechanic on a particular date in the mechanic availability page.</p>
         <p>You may book multiple cars separately.</p>
     </aside>
 </main>
 
-<footer class="wrap footer">© GariMD</footer>
+<footer class="wrap footer">©2025 GariMD. Created by Fardous Nayeem</footer>
 
 <script src="assets/app.js"></script>
 

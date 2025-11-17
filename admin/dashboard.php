@@ -63,7 +63,10 @@ $appointments = $appStmt->fetchAll();
             <td><?= htmlspecialchars($a['car_engine']) ?></td>
             <td><?= htmlspecialchars($a['appointment_date']) ?></td>
             <td><?= htmlspecialchars($a['mechanic_name']) ?></td>
-            <td><a href="edit.php?id=<?= $a['id'] ?>">Edit</a></td>
+            <td>
+              <a href="edit.php?id=<?= $a['id'] ?>">Edit</a> |
+              <a href="delete_appointment.php?id=<?= $a['id'] ?>" onclick="return confirm('Delete appointment?')">Delete</a>
+            </td>
           </tr>
         <?php endforeach; ?>
       </table>

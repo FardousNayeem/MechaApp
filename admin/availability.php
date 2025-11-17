@@ -14,7 +14,7 @@ require __DIR__ . '/../db/db.php';
 
 <?php include __DIR__ . '/../components/navbar.php'; ?>
 
-<main class="wrap">
+<main class="wrap center-page">
   <section class="card">
     <h2>Mechanic Availability</h2>
 

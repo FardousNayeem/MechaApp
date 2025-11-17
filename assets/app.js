@@ -22,12 +22,19 @@ document.addEventListener('DOMContentLoaded', function(){
         } else {
           availability.innerHTML = `<div>Slots left: <strong>${data.slots_left}</strong> / ${data.capacity}</div>`;
 
-          if(!data.can_book) {
-            availability.innerHTML += `
-              <div class="error-box">
-                This mechanic is fully booked on ${date}. Please choose another mechanic.
+          const submitBtn = document.querySelector('.btn');
+
+          if (!data.can_book) {
+              availability.innerHTML += `<div class="error-box">
+                  This mechanic is fully booked on ${date}. Please choose another mechanic.
               </div>`;
+              submitBtn.disabled = true;
+              submitBtn.style.opacity = "0.6";
+          } else {
+              submitBtn.disabled = false;
+              submitBtn.style.opacity = "1";
           }
+
         }
       })
       .catch(() => {

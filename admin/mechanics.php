@@ -15,7 +15,7 @@ $mechs = $pdo->query("SELECT * FROM mechanics ORDER BY name")->fetchAll();
 
 <?php include __DIR__ . '/../components/navbar.php'; ?>
 
-<main class="wrap">
+<main class="wrap center-page">
 <section class="card">
   <h2>Manage Mechanics</h2>
 

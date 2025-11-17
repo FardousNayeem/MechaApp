@@ -22,7 +22,7 @@ body {
 .site-header {
     background: linear-gradient(90deg, #0b62c3, #0a56aa);
     color: white;
-    padding: 14px 0;
+    padding: 5px 0;
 }
 
 .nav-flex {
@@ -66,6 +66,17 @@ main.wrap {
     gap: 24px;
 }
 
+
+.site-header .wrap {
+    padding: 6px 20px;
+}
+
+.site-header {
+    padding: 6px 0;
+}
+
+
+
 /* CARDS */
 .card {
     background: var(--card);
@@ -74,6 +85,12 @@ main.wrap {
     box-shadow: 0px 4px 20px rgba(0,0,0,0.08);
     margin-bottom: 20px;
 }
+
+.center-page {
+    display: flex;
+    justify-content: center;
+}
+
 
 .small {
     width: 300px;
@@ -105,7 +122,9 @@ input:focus, textarea:focus, select:focus {
     box-shadow: 0 0 0 2px rgba(11,98,195,0.25);
 }
 
-label.full { grid-column: 1 / -1; }
+label.full { 
+    grid-column: 1 / -1; 
+}
 
 .btn {
     background: var(--primary);
@@ -114,6 +133,7 @@ label.full { grid-column: 1 / -1; }
     font-size: 15px;
     border-radius: 8px;
     border: none;
+    margin-top: 10px;
     cursor: pointer;
 }
 
@@ -151,13 +171,13 @@ label.full { grid-column: 1 / -1; }
     background: #f9fbff;
 }
 
-/* ERROR BOX */
+
 .error-box {
     background: #ffe5e5;
     color: var(--danger);
     padding: 12px;
     border-radius: 6px;
-    border: 1px solid #ffbcbc;
+    border: 2px solid #ffbcbc;
     margin-bottom: 12px;
 }
 
