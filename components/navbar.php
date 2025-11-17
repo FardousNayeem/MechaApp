@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 
 $current = basename($_SERVER['PHP_SELF']);
 

@@ -33,7 +33,11 @@ require __DIR__ . '/db/db.php';
       <p><strong>Car already booked on same date:</strong> You cannot book that same car again that day.</p>
 
       <h3>Contact</h3>
-      <p>If you face issuess, please contact the admin at fardous.nayeem@g.bracu.ac.bd</p>
+      <p>If you face issues, please contact the admin at 
+        <a href="mailto:fardous.nayeem@g.bracu.ac.bd" class="mail-link">
+            fardous.nayeem@g.bracu.ac.bd
+        </a>
+      </p>
 
     </section>
   </main>

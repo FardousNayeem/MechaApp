@@ -192,3 +192,14 @@ label.full {
 .login-card {
     width: 360px;
 }
+
+.mail-link {
+    color: #0b62c3;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.mail-link:hover {
+    color: #084a93;
+    text-decoration: none;
+}
