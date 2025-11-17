@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . '/db/mechadb.php';
+require __DIR__ . '/db/db.php';
 
 function fail($msg) {
     // simple fail; in production you might store into session and redirect back

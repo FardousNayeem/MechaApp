@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(!isset($_SESSION['admin_logged'])) header('Location: login.php');
-require __DIR__ . '/db/mechadb.php';
+require __DIR__ . '/../db/db.php';
 
 $id = (int)($_GET['id'] ?? 0);
 if(!$id) header('Location: dashboard.php');

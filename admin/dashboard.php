@@ -1,7 +1,8 @@
 <?php
 session_start();
 if(!isset($_SESSION['admin_logged'])) header('Location: login.php');
-require __DIR__ . '/db/mechadb.php';
+require __DIR__ . '/../db/db.php';
+
 
 // mechanics
 $mechStmt = $pdo->query("SELECT id, name, capacity FROM mechanics ORDER BY name");
