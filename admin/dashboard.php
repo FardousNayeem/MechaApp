@@ -3,16 +3,19 @@ session_start();
 if(!isset($_SESSION['admin_logged'])) header('Location: login.php');
 require __DIR__ . '/../db/db.php';
 
-// mechanic overview
-$mechStmt = $pdo->query("
+$today = date('Y-m-d');
+
+$mechStmt = $pdo->prepare("
     SELECT m.*,
-    (SELECT COUNT(*) FROM appointments a 
-     WHERE a.mechanic_id = m.id AND a.appointment_date = CURDATE()) AS today_count
+      (SELECT COUNT(*) FROM appointments a 
+       WHERE a.mechanic_id = m.id 
+       AND a.appointment_date = ?) AS today_count
     FROM mechanics m
+    ORDER BY m.name
 ");
+$mechStmt->execute([$today]);
 $mechanics = $mechStmt->fetchAll();
 
-// all appointments
 $appStmt = $pdo->query("
   SELECT a.*, m.name AS mechanic_name
   FROM appointments a
@@ -36,7 +39,12 @@ $appointments = $appStmt->fetchAll();
     <section class="card">
       <h2>Mechanics (Today)</h2>
       <table class="tbl">
-        <tr><th>Name</th><th>Booked Today</th><th>Remaining</th></tr>
+        <tr>
+          <th>Name</th>
+          <th>Booked Today</th>
+          <th>Remaining</th>
+        </tr>
+
         <?php foreach($mechanics as $m): ?>
           <tr>
             <td><?= htmlspecialchars($m['name']) ?></td>
@@ -72,6 +80,7 @@ $appointments = $appStmt->fetchAll();
       </table>
     </section>
 </main>
+
 <footer class="wrap footer">©2025 GariMD. Created by Fardous Nayeem</footer>
 
 </body>
