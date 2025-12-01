@@ -382,4 +382,6 @@ label.full {
   text-align: center;    
 }
 
-
+.tbl-center th, .tbl-center td {
+  text-align: center;
+}

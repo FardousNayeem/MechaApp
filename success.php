@@ -1,18 +1,15 @@
 <?php
 session_start();
-
 $summary = $_SESSION['last_appointment'] ?? null;
-
 unset($_SESSION['last_appointment']);
 ?>
-
 <!doctype html>
 <html>
 <head>
     <meta charset="utf-8">
     <title>Appointment Booked — GariMD</title>
     <link rel="stylesheet" href="assets/style.css">
-    <meta http-equiv="refresh" content="6; url=index.php">
+    <meta http-equiv="refresh" content="30; url=index.php">
 </head>
 <body>
 
@@ -27,6 +24,7 @@ unset($_SESSION['last_appointment']);
         <?php if ($summary): ?>
             <div class="summary-box">
                 <p><strong>Name:</strong> <?= htmlspecialchars($summary['client_name']) ?></p>
+                <p><strong>Address:</strong> <?= htmlspecialchars($summary['address'] ?: '—') ?></p>
                 <p><strong>Car Registration:</strong> <?= htmlspecialchars($summary['car_license']) ?></p>
                 <p><strong>Engine Number:</strong> <?= htmlspecialchars($summary['car_engine']) ?></p>
                 <p><strong>Date:</strong> <?= htmlspecialchars($summary['appointment_date']) ?></p>
@@ -36,7 +34,7 @@ unset($_SESSION['last_appointment']);
 
         <p><a class="btn" href="index.php">Book Another Appointment</a></p>
 
-        <p class="redirect-note">You will be redirected back to the homepage in 6 seconds…</p>
+        <p class="redirect-note">You will be redirected back to the homepage in 30 seconds…</p>
     </section>
 </main>
 
